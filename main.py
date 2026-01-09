@@ -114,3 +114,37 @@ print(f"array 的类型: {type(array)}")  # <class 'list'>
 print(f"tuple_data 的类型: {type(tuple_data)}")  # <class 'tuple'>
 print(f"dictionary 的类型: {type(dictionary)}")  # <class 'dict'>
 print(f"set_data 的类型: {type(set_data)}")  # <class 'set'>
+
+# ============================================================
+# 四、isinstance() 类型检查
+# ============================================================
+# isinstance() 比 type() 更推荐使用，因为它支持继承检查
+# 语法: isinstance(对象, 类型) 或 isinstance(对象, (类型1, 类型2, ...))
+
+print("\n=== isinstance() 类型检查 ===")
+
+# 1. 基本用法 - 检查单个类型
+print(f"string 是字符串吗? {isinstance(string, str)}")  # True
+print(f"number 是整数吗? {isinstance(number, int)}")  # True
+print(f"boolean 是布尔吗? {isinstance(boolean, bool)}")  # True
+print(f"array 是列表吗? {isinstance(array, list)}")  # True
+
+# 2. 检查多个类型（元组形式）- 只要是其中之一就返回 True
+print(f"\nnumber 是 int 或 float 吗? {isinstance(number, (int, float))}")  # True
+print(f"string 是 str 或 list 吗? {isinstance(string, (str, list))}")  # True
+
+# 3. 布尔类型的特殊性 - bool 是 int 的子类！
+print("\n布尔值的特殊性:")
+print(f"  True 是 bool 吗? {isinstance(True, bool)}")  # True
+print(f"  True 是 int 吗? {isinstance(True, int)}")  # True（因为 bool 继承自 int）
+print(f"  type(True) == bool: {type(True) == bool}")  # noqa: E721 演示用
+print(f"  type(True) == int: {type(True) == int}")  # noqa: E721 演示用
+
+# 4. isinstance() vs type() 的区别
+# - isinstance() 会考虑继承关系，推荐使用
+# - type() 只检查精确类型，不考虑继承
+print("\nisinstance() 和 type() 的区别:")
+print(f"  isinstance(True, int): {isinstance(True, int)}")  # True
+print(f"  isinstance(True, int): {isinstance(True, bool)}")  # True
+print(f"  type(True) == int: {type(True) == int}")  # noqa: E721
+print(f"  type(True) == int: {type(True) == bool}")  # noqa: E721
