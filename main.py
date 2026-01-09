@@ -146,5 +146,5 @@ print(f"  type(True) == int: {type(True) == int}")  # noqa: E721 演示用
 print("\nisinstance() 和 type() 的区别:")
 print(f"  isinstance(True, int): {isinstance(True, int)}")  # True
 print(f"  isinstance(True, int): {isinstance(True, bool)}")  # True
-print(f"  type(True) == int: {type(True) == int}")  # noqa: E721
-print(f"  type(True) == int: {type(True) == bool}")  # noqa: E721
+print(f"  type(True) == int: {type(True) == int}")  # noqa: E721 False
+print(f"  type(True) == int: {type(True) == bool}")  # noqa: E721 True
