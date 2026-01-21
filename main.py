@@ -17,4 +17,5 @@ def increment_local():
 increment()
 increment()
 increment_local()
+
 print("全局计数器:", counter)
