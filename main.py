@@ -1,21 +1,22 @@
-# 2.3.2 全局变量修改
+# if-elif-else 语句
+age = 18
+if age >= 18:
+    print("成年人")
+elif age >= 12:
+    print("青少年")
+else:
+    print("儿童")
 
-counter = 0  # 全局变量
+# 三元运算符（条件表达式）
+status = "成年人" if age >= 18 else "未成年人"  # 语法顺序为： 值 if 条件 else 否则的值
+print(status)
 
-
-def increment():
-    global counter  # 声明使用全局变量（不声明则无法修改）
-    counter += 1
-    print("计数器:", counter)
-
-
-def increment_local():
-    counter = 0  # 同名局部变量，与全局变量无关
-    counter += 1
-    print("局部计数器:", counter)
-
-
-increment()  # 输出: 1
-increment()  # 输出: 2
-increment_local()  # 输出: 1（局部变量，不影响全局）
-print("全局计数器:", counter)  # 输出: 2
+# match 语句（Python 3.10+）
+day = "Monday"
+match day:
+    case "Monday":
+        print("星期一")
+    case "Tuesday":
+        print("星期二")
+    case _:
+        print("其他日子")
