@@ -1,27 +1,30 @@
-# 基本调用
-def greet(name, age):
-    return f"你好，{name}！你今年{age}岁。"
+# ========== 列表：Python的万能收纳盒 ==========
 
+arr = [1, 2, 3, 4, 5]  # 🎁 开箱！新鲜的列表出炉
 
-print(greet("张三", 25))
+# ➕ 塞东西三连
+arr.append(6)  # 末尾加：乖乖排队
+arr.insert(0, 0)  # 开头加：合法插队
+arr.insert(2, 2.5)  # 中间插：硬挤，后面的靠边站
 
-# 关键字参数调用
-print(greet(name="李四", age=25))
-print(greet(age=25, name="李四"))  # 参数顺序可以调换
+# ➖ 踢人四连
+arr.pop()  # 弹末尾：后进先出
+arr.pop(0)  # 弹指定：点名踢人
+del arr[2]  # del大法：抹除存在
+arr.remove(3)  # 按值删：见3杀3（仅首个）
+arr.insert(2, 3)  # 后悔药：塞回去
 
-# 字典解包
-person = {"name": "王五", "age": 30}
-print(greet(**person))
+# 🔍 查找
+index = arr.index(3)  # 问路："3在哪？" → 索引2
+found = next((x for x in arr if x > 3), None)  # 找第一个>3的，找不到返回None
 
+# ✨ 列表推导式：一行顶一个for循环
+doubled = [x * 2 for x in arr]  # 全员×2：通货膨胀
+filtered = [x for x in arr if x > 2]  # 过滤：只留精英(>2)
+sum_result = sum(arr)  # 求和：数学课代表上线
 
-# 方法调用
-class Person:
-    def __init__(self, name):
-        self.name = name
-
-    def greet(self):
-        return f"你好，{self.name}！"
-
-
-person = Person("赵六")
-print(person.greet())
+# 📢 验货
+print("原列表:", arr)
+print("翻倍:", doubled)
+print("过滤:", filtered)
+print("求和:", sum_result)
