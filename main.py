@@ -1,22 +1,33 @@
-# if-elif-else 语句
-age = 18
-if age >= 18:
-    print("成年人")
-elif age >= 12:
-    print("青少年")
-else:
-    print("儿童")
+# ============ 🔄 循环：让电脑帮你重复干活 ============
 
-# 三元运算符（条件表达式）
-status = "成年人" if age >= 18 else "未成年人"  # 语法顺序为： 值 if 条件 else 否则的值
-print(status)
+# for 循环 —— range(5) 生成 0,1,2,3,4（程序员从0开始数，别问为什么）
+for i in range(5):
+    print(i)
 
-# match 语句（Python 3.10+）
-day = "Monday"
-match day:
-    case "Monday":
-        print("星期一")
-    case "Tuesday":
-        print("星期二")
-    case _:
-        print("其他日子")
+# 遍历列表 —— 一个个拿出来溜溜，简单粗暴
+numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+    print(num)
+
+# 遍历字典 —— .items() 让你同时拿到 key 和 value，一箭双雕
+person = {"name": "张三", "age": 25}
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+# 只要 key —— 字典默认就给你 key，它很懂你
+for key in person:
+    print(key)
+
+# 只要 value —— .values() 专门负责掏值，key 直接无视
+for value in person.values():
+    print(value)
+
+# while 循环 —— 条件成立就一直跑，别忘了 count += 1，不然就是死循环地狱
+count = 0
+while count < 5:
+    print(count)
+    count += 1  # 这行忘写？恭喜你，CPU 开始冒烟了 🔥
+
+# 列表推导式 —— Python 的炫技语法，一行搞定别人三行的活
+squares = [x**2 for x in range(5)]  # 结果：[0, 1, 4, 9, 16]，平方根速算器
+print(squares)
