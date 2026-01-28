@@ -1,25 +1,14 @@
-# math_utils.py
-def add(a, b):
-    return a + b
-
-
-def subtract(a, b):
-    return a - b
-
-
-class Calculator:
-    def __init__(self):
-        self.result = 0
-
-    def add(self, x):
-        self.result += x
-        return self
-
-
-# main.py
 from math_utils import add, subtract, Calculator
-import math_utils as math
 
 calc = Calculator()
-print(add(5, 3))
-print(math.subtract(10, 4))
+
+print(add(5, 3))  # 8
+print(subtract(10, 3))  # 7
+
+print("----------------")
+
+
+print(calc.add(10, 4))  # 14
+# print(calc.subtract(10, 4))  # 6
+
+print(calc.result)
