@@ -1,20 +1,38 @@
-# math_utils.py - Python 模块
-# 提示：这就是传说中比 JavaScript 模块简单 100 倍的 Python 模块 😎
+# 1. 准备一盘饺子 (列表)
+# 这就是一个普通的列表，里面有 3 个饺子
+pan_zi = ["饺子1", "饺子2", "饺子3"]
 
+# 2. 只有把饺子装进 "自动喂食器" (迭代器/Iterator)，next 函数才能工作
+# iter() 就是把盘子里的东西装进喂食器
+wei_shi_qi = iter(pan_zi)
 
-def add(a, b):
-    """加法函数 - 小学数学，但程序员每天都在用"""
-    return a + b  # 就这么简单，连 if 判断都不需要
+print("--- 开始吃饺子 ---")
 
+print(f"这就是喂食器(迭代器)的真面目: {wei_shi_qi}")
 
-def multiply(a, b):
-    """乘法函数 - 比加法高级一点点，但也就那样"""
-    return a * b  # 注意：Python 的 * 是乘法，不是指针（C++ 程序员请注意）
+# 👆 注意：直接打印它，只能看到通过 "内存地址" (类似于它的身份证号)
+# 要吃到里面的东西，必须用 next()！
+# 3. 使用 next() 函数
+# next(喂食器) = 从喂食器里拿这就出来吃掉一个
+# 这里的 "next" 就是 "下一个" 的意思
 
+first_one = next(wei_shi_qi)
+print(f"也就是: {first_one}")  # 输出: 饺子1
 
-# 模块级变量（类似 JavaScript 的常量）
-PI = 3.14159  # 圆周率：数学界最著名的网红，背后有无限位小数
+second_one = next(wei_shi_qi)
+print(f"接着吃: {second_one}")  # 输出: 饺子2
 
-# Python 没有默认导出的概念，但可以定义 __all__ 来控制 from module import * 的行为
-# 翻译：这是 Python 的"出口管制清单"，只有这里列出的才能被 * 一键带走
-__all__ = ["add", "multiply", "PI"]  # 想导入别的？门都没有！
+third_one = next(wei_shi_qi)
+print(f"最后吃: {third_one}")  # 输出: 饺子3
+
+print("\n--- 盘子空了，如果再硬要吃... ---")
+
+# 4. 如果没有饺子了，还硬要 next()，就会报错 (StopIteration)
+# 下面这行如果不注释掉，程序就会崩溃报错
+error_one = next(wei_shi_qi, "没有啦")
+print("嘿嘿不报错:", error_one)
+
+# # 5. 为了不报错，我们可以给 next 一个 "安慰奖" (默认值)
+# # 如果拿不到了，就返回这个默认值，而不是报错
+# empty_result = next(wei_shi_qi, "没有饺子啦！")
+# print(f"再次尝试仅仅结果是: {empty_result}")
