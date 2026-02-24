@@ -1,17 +1,7 @@
-# math_utils.py - Python 模块
-def add(a, b):
-    """加法函数"""
-    return a + b
+# 点名道姓地导入，清晰明了，编辑器绝对不会报错！
+from math_utils import add, multiply, PI
 
-
-def multiply(a, b):
-    """乘法函数"""
-    return a * b
-
-
-# 模块级变量（类似 JavaScript 的常量）
-PI = 3.14159
-
-
-# Python 没有默认导出的概念，但可以定义 __all__ 来控制 from module import * 的行为
-__all__ = ["add", "multiply", "PI"]
+# 因为你在 __all__ 里规定了可以导出这三个，所以可以直接用
+print(add(10, 20))
+print(multiply(2, 3))
+print(PI)
