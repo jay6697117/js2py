@@ -65,7 +65,10 @@
 #     └── test_math.py
 
 # __init__.py - 包初始化文件
-from .math_utils import add, multiply
-from .string_utils import capitalize, reverse
+from math_utils import add, multiply
+import string_utils
 
-__all__ = ["add", "multiply", "capitalize", "reverse"]
+print(add(5, 3))  # 8
+print(multiply(2, 4))  # 8
+print(string_utils.capitalize("hello"))  # "Hello"
+print(string_utils.reverse("hello"))  # "olleh"
