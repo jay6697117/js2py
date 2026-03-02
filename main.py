@@ -1,10 +1,10 @@
-# 点名道姓地导入，清晰明了，编辑器绝对不会报错！
-from math_utils import add, multiply, PI
+# # 点名道姓地导入，清晰明了，编辑器绝对不会报错！
+# from math_utils import add, multiply, PI
 
-# 因为你在 __all__ 里规定了可以导出这三个，所以可以直接用
-print(add(10, 20))
-print(multiply(2, 3))
-print(PI)
+# # 因为你在 __all__ 里规定了可以导出这三个，所以可以直接用
+# print(add(10, 20))
+# print(multiply(2, 3))
+# print(PI)
 
 # Python 导入方式
 # # 1. 导入整个模块
@@ -54,3 +54,18 @@ print(PI)
 #     print("这个文件被直接运行")
 # else:
 #     print("这个文件被作为模块导入")
+
+# Python 包结构示例
+# my_package/
+# ├── __init__.py          # 包初始化文件
+# ├── math_utils.py        # 数学工具模块
+# ├── string_utils.py      # 字符串工具模块
+# └── tests/
+#     ├── __init__.py
+#     └── test_math.py
+
+# __init__.py - 包初始化文件
+from .math_utils import add, multiply
+from .string_utils import capitalize, reverse
+
+__all__ = ["add", "multiply", "capitalize", "reverse"]
