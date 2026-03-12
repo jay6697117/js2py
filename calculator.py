@@ -1,6 +1,7 @@
 # calculator.py - Python 版本
 class Calculator:
     """计算器类，支持基本运算和历史记录"""
+
     def __init__(self):
         self.history = []
 
@@ -51,7 +52,7 @@ def format_result(result):
 
 
 # 如果直接运行此文件
-print("__name__:", __name__)
+print("__name__ 2:", __name__)
 if __name__ == "__main__":
     calc = Calculator()
     print(calc.add(10, 5))
