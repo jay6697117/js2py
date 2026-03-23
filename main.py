@@ -48,15 +48,15 @@
 # │   └── main.py
 
 # my_package/components/calculator.py
-from ..utils.math_utils import add, multiply
-from ..utils.string_utils import capitalize
+# from ..utils.math_utils import add, multiply
+# from ..utils.string_utils import capitalize
 
 
-class Calculator:
-    def __init__(self):
-        self.math = {"add": add, "multiply": multiply}
-        self.string = {"capitalize": capitalize}
+# class Calculator:
+#     def __init__(self):
+#         self.math = {"add": add, "multiply": multiply}
+#         self.string = {"capitalize": capitalize}
 
 
-# my_package/main.py
-from .components.calculator import Calculator
+# # my_package/main.py
+# from .components.calculator import Calculator
