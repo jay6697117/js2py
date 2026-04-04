@@ -60,3 +60,11 @@
 
 # # my_package/main.py
 # from .components.calculator import Calculator
+
+from my_package import Calculator
+
+calculator = Calculator()
+
+print(f"add(2, 3) = {calculator.math['add'](2, 3)}")
+print(f"multiply(4, 6) = {calculator.math['multiply'](4, 6)}")
+print(f"capitalize('hello') = {calculator.string['capitalize']('hello')}")
