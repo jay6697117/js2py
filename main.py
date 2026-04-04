@@ -61,10 +61,39 @@
 # # my_package/main.py
 # from .components.calculator import Calculator
 
-from my_package import Calculator
+# from my_package import Calculator
 
-calculator = Calculator()
+# calculator = Calculator()
 
-print(f"add(2, 3) = {calculator.math['add'](2, 3)}")
-print(f"multiply(4, 6) = {calculator.math['multiply'](4, 6)}")
-print(f"capitalize('hello') = {calculator.string['capitalize']('hello')}")
+# print(f"add(2, 3) = {calculator.math['add'](2, 3)}")
+# print(f"multiply(4, 6) = {calculator.math['multiply'](4, 6)}")
+# print(f"capitalize('hello') = {calculator.string['capitalize']('hello')}")
+
+# # Python 动态导入
+# import importlib
+# import sys
+
+
+# def load_module(module_name):
+#     """动态加载模块"""
+#     try:
+#         module = importlib.import_module(f"modules.{module_name}")
+#         return module
+#     except ImportError as error:
+#         print(f"无法加载模块 {module_name}: {error}")
+#         return None
+
+
+# # 使用动态导入
+# def main():
+#     math_module = load_module("math_utils")
+#     if math_module:
+#         print(math_module.add(5, 3))
+
+#     string_module = load_module("string_utils")
+#     if string_module:
+#         print(string_module.capitalize("hello"))
+
+
+# if __name__ == "__main__":
+#     main()
